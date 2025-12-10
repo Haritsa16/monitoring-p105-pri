@@ -1,0 +1,53 @@
+body {
+  font-family: system-ui, sans-serif;
+  padding: 12px;
+  background: #fff;
+  color: #111;
+}
+
+.header {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 16px;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.metric-value {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.metric-unit {
+  font-size: 12px;
+  color: #666;
+}
+
+.readings-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+.readings-table th,
+.readings-table td {
+  padding: 6px;
+  border-bottom: 1px solid #eee;
+  font-size: 12px;
+  text-align: left;
+}
