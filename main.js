@@ -1,5 +1,5 @@
 // GANTI dengan alamat backend kamu
-const baseURL = "http://localhost:3000";
+const baseURL = "https://backend-twilight-wildflower-5740.fly.dev";
 // atau "http://192.168.1.10:3000" kalau backend di PC lain
 
 async function loadLast() {
