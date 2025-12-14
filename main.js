@@ -42,8 +42,35 @@ async function loadHistory() {
 loadLast();
 loadHistory();
 
+async function downloadCSV() {
+  try {
+    const r = await fetch(`${baseURL}/api/readings?limit=1000`);
+    const data = await r.json();
+
+    let csv = "Timestamp,Temperature,Humidity,THI\n";
+
+    data.forEach((x) => {
+      csv += `${x.ts},${x.temp},${x.rh},${x.thi}\n`;
+    });
+
+    const blob = new Blob([csv], { type: "text/csv" });
+    const url = window.URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "environment_history.csv";
+    a.click();
+
+    window.URL.revokeObjectURL(url);
+  } catch (err) {
+    console.error("Failed to download CSV", err);
+  }
+}
+
 // optional: refresh tiap 10 detik
 setInterval(() => {
   loadLast();
   loadHistory();
 }, 10000);
+
+document.getElementById("downloadBtn").addEventListener("click", downloadCSV);

@@ -51,3 +51,23 @@ body {
   font-size: 12px;
   text-align: left;
 }
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+
+#downloadBtn {
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  cursor: pointer;
+}
+
+#downloadBtn:hover {
+  background: #eee;
+}
